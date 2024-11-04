@@ -5,14 +5,47 @@
   width: auto;
   height: 100%;
 }
-#title .wrap ul {
+#title .wrap > ul {
   height: 100%;
   overflow: hidden;
+}
+#title .wrap > ul .slick-prev{
+  left: 30px;
+}
+#title .wrap > ul .slick-prev::before{  
+  background: url(../img/svg/prev.svg);
+}
+#title .wrap > ul .slick-prev:hover::before{  
+  transform: translateX(-20px);
+}
+#title .wrap > ul .slick-next{
+  right: 30px;
+}
+#title .wrap > ul .slick-next:before{
+  background: url(../img/svg/next.svg);
+}
+#title .wrap > ul .slick-next:hover:before{  
+  transform: translateX(20px);
+}
+#title .wrap > ul .slick-prev,#title .wrap > ul .slick-next{
+  z-index: 1;
+  width: auto;
+  height: auto;
+}
+#title .wrap > ul .slick-prev::before,#title .wrap > ul .slick-next:before{  
+  font-size: 0;
+  width: 80px;
+  height: 80px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.7s;
 }
 #title .wrap ul div{
   height: 100%
 }
-#title .wrap ul li {
+#title .wrap > ul li.t {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -35,7 +68,7 @@
 #title .wrap ul li h2 {  
   color: white;
 }
-#title .wrap ul li a {
+#title .wrap ul li.t a {
   color: #333;
   background-color: #eee;
   width: fit-content;
@@ -43,4 +76,18 @@
   padding: 10px;
   font-size: 16px;
   border-radius: 12px;
+  z-index: 1;
+}
+#title .wrap > ul .slick-dots{
+  bottom: 30px;
+}
+#title .wrap > ul .slick-dots li button::before{  
+  content: "";
+  border: 3px solid;
+  border-radius: 10px;
+  height: 0;
+  width: 0;
+}
+#title .wrap > ul .slick-dots li button:hover::before{
+  
 }
